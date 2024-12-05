@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Stages Étudiants</title>
+    <link rel="stylesheet" href="styles.css?v=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <div class="language-switcher">
+        <button onclick="setLanguage('fr')" class="active">Français</button>
+        <button onclick="setLanguage('en')">English</button>
+        <button id="nightModeToggle">🌙 Night Mode</button>
+    </div>
+
+    <h2 data-lang-fr="Gestion des Stages Étudiants - Connexion/Inscription"
+        data-lang-en="Student Internship Management - Login/Signup">
+        Gestion des Stages Étudiants - Connexion/Inscription
+    </h2>
+
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form action="signup.php" method="post">
+                <h1 data-lang-fr="Créer un Compte" data-lang-en="Create an Account">Créer un Compte</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span data-lang-fr="ou utilisez votre email pour vous inscrire"
+                    data-lang-en="or use your email for signup">
+                    ou utilisez votre email pour vous inscrire
+                </span>
+                <input type="text" placeholder="Nom" id="newusername" name="newusername" required />
+                <input type="email" placeholder="Email" id="email" name="email" required />
+                <input type="password" placeholder="Mot de passe" id="newpassword" name="newpassword" required />
+                <input type="password" placeholder="Confirmer le mot de passe" id="newconfirm_password"
+                    name="newconfirm_password" required />
+                <div class="form-group">
+                    <div class="g-recaptcha" data-sitekey="6LfV1VUqAAAAAL1-cvyY1vLi6J_Cj4Zt6K6kPMgL"></div>
+                </div>
+                <button type="submit" data-lang-fr="Inscription" data-lang-en="Sign Up">Inscription</button>            
+            </form>
+        </div>
+
+        <div class="form-container sign-in-container">
+            <form action="login.php" method="post">
+                <h1 data-lang-fr="Connexion" data-lang-en="Login">Connexion</h1>
+                <span data-lang-fr="ou utilisez votre compte" data-lang-en="or use your account">
+                    ou utilisez votre compte
+                </span>
+                <input type="text" placeholder="Nom d'utilisateur" id="username" name="username" required />
+                <input type="password" placeholder="Mot de passe" id="password" name="password" required />
+                <a href="forgot_password.html" data-lang-fr="Mot de passe oublié ?" data-lang-en="Forgot password?">Mot
+                    de passe oublié ?</a>
+                <div class="form-group">
+                    <div class="g-recaptcha" data-sitekey="6LfV1VUqAAAAAL1-cvyY1vLi6J_Cj4Zt6K6kPMgL"></div>
+                </div>
+                <button type="submit" data-lang-fr="Connexion" data-lang-en="Sign In">Connexion</button>
+            </form>
+        </div>
+
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1 data-lang-fr="Bienvenue, Administrateur !" data-lang-en="Welcome, Administrator!">Bienvenue,
+                        Administrateur !</h1>
+                    <p data-lang-fr="Connectez-vous pour gérer les stages des étudiants et rester en contact avec leurs progrès."
+                        data-lang-en="Sign in to manage student internships and stay updated with their progress.">
+                        Connectez-vous pour gérer les stages des étudiants et rester en contact avec leurs progrès.
+                    </p>
+                    <button class="ghost" id="signIn" data-lang-fr="Connexion" data-lang-en="Sign In">Connexion</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1 data-lang-fr="Rejoignez le Portail Administrateur !"
+                        data-lang-en="Join the Administrator Portal!">
+                        Rejoignez le Portail Administrateur !
+                    </h1>
+                    <p data-lang-fr="Inscrivez-vous maintenant pour commencer à gérer les stages et suivre les progrès des étudiants."
+                        data-lang-en="Sign up now to start managing internships and tracking student progress.">
+                        Inscrivez-vous maintenant pour commencer à gérer les stages et suivre les progrès des étudiants.
+                    </p>
+                    <button class="ghost" id="signUp" data-lang-fr="Inscription"
+                        data-lang-en="Sign Up">Inscription</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="translation.js"></script>
+    <script src="nightMode.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/cesiumjs/1.78/Build/Cesium/Cesium.js"></script>
+</body>
+
+</html>
